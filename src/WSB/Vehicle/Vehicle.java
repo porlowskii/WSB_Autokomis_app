@@ -1,17 +1,15 @@
 package WSB.Vehicle;
 
-import java.util.Date;
-
 public abstract class Vehicle {
     private String model;
     private String producer;
-    private Date dateOfProduction;
+    private Integer yearOfProduction;
     private Double price;
 
-    public Vehicle(String model, String producer, Date dateOfProduction, Double price) {
+    public Vehicle(String model, String producer, Integer yearOfProduction, Double price) {
         this.model = model;
         this.producer = producer;
-        this.dateOfProduction = dateOfProduction;
+        this.yearOfProduction = yearOfProduction;
         this.price = price;
     }
 

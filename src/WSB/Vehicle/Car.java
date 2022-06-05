@@ -8,7 +8,7 @@ public abstract class Car extends Vehicle implements Service{
     private String fuel;
     private ArrayList<Equipment> equipments;
 
-    public Car(String model, String producer, Date dateOfProduction,Double price, String engineType, ArrayList<Equipment> equipment ) {
+    public Car(String model, String producer, Integer dateOfProduction,Double price, String engineType, ArrayList<Equipment> equipment ) {
         super(model, producer, dateOfProduction, price);
         this.engineType=engineType;
         this.equipments =equipment;

@@ -8,7 +8,7 @@ public class Motorcycle extends Vehicle implements Service{
     private Integer engineCap;
     private ArrayList<Equipment> equipments;
 
-    public Motorcycle(String model, String producer, Date dateOfProduction, Double price, String type, Integer engineCap, ArrayList<Equipment> equipment) {
+    public Motorcycle(String model, String producer, Integer dateOfProduction, Double price, String type, Integer engineCap, ArrayList<Equipment> equipment) {
         super(model, producer, dateOfProduction, price);
         this.type = type;
         this.engineCap = engineCap;

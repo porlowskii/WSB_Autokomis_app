@@ -8,7 +8,7 @@ import java.util.Date;
 
 public class PickUp extends Car {
     private Double capacity;
-    public PickUp(String model, String producer, Date dateOfProduction, String engineType, Double price, ArrayList<Equipment> equipment, Double capacity) {
+    public PickUp(String model, String producer, Integer dateOfProduction, String engineType, Double price, ArrayList<Equipment> equipment, Double capacity) {
         super(model, producer, dateOfProduction, price, engineType, equipment);
         this.capacity=capacity;
     }
