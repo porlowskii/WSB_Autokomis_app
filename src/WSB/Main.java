@@ -1,9 +1,12 @@
 package WSB;
 
+import WSB.UserInterface.UserInterface;
+
 public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        System.out.println("test");
+        UserInterface UI = new UserInterface();
+        UI.start();
     }
 }
