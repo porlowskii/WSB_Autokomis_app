@@ -33,8 +33,29 @@ public class Guest {
             }
             //TODO: podział na rodzaj pojazdu
             if (target==1) {
-                System.out.println("auto");
-                System.exit(0);
+                System.out.println("1: SUV'y");
+                System.out.println("2: SuperCars");
+                System.out.println("3: PickUp'y");
+                System.out.println("0: Powrót do głownego menu");
+                System.out.println("X: Wyjście z programu");
+                String inputCar = scan.nextLine();
+                if (inputCar.toLowerCase(Locale.ROOT).equals("x")) {
+                    System.exit(0);
+                }
+                Integer targetCar;
+                try {
+                    targetCar = Integer.valueOf(inputCar);
+                } catch (Exception e) {
+                    System.out.println("Nieprawidłowy format, podaj jedynie liczbę");
+                    continue;
+                }
+                if(targetCar==0) {
+                    break;
+                }
+                if(targetCar==1) {
+                    System.out.println("XXXXXX");
+                    System.exit(0);
+                }
             }
             if (target==2) {
                 System.out.println("moto");

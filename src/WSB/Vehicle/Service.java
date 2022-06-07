@@ -6,5 +6,4 @@ public interface Service {
 
     public String refuel();
 
-    public void tuning(Equipment equipment);
 }

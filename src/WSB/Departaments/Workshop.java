@@ -1,19 +1,27 @@
 package WSB.Departaments;
 
-import java.util.ArrayList;
+import WSB.Database.Database;
 
 public class Workshop extends Departament implements Actions{
-    public Workshop(Integer numberOfStaff, Double balance, ArrayList<Object> vehicleList) {
-        super(numberOfStaff, balance, vehicleList);
+    Database workshop = new Database();
+
+    public Workshop(Integer numberOfStaff, Double balance) {
+        super(numberOfStaff, balance);
+    }
+
+
+    @Override
+    public void addVehicle(Integer type, Integer position, Integer numberOnList) {
+        workshop.addVehicle(type, position, dbf.getObjectVehicle(type, position, numberOnList));
     }
 
     @Override
-    public String checkCar(Object object) {
-        return null;
+    public void removeVehicle(Integer type, Integer position, Integer numberOnList) {
+        workshop.removeVehicle(type,position,numberOnList);
     }
 
     @Override
-    public void destroyCar() {
-
+    public Database showAllVehicles() {
+        return workshop;
     }
 }

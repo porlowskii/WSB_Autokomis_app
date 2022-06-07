@@ -1,14 +1,23 @@
 package WSB.Departaments;
 
-import java.util.ArrayList;
+import WSB.Database.DatabaseFactoring;
 
 public abstract class Departament {
     private Integer numberOfStaff;
     private Double balance;
-    private ArrayList<Object> vehicleList;
-    public Departament (Integer numberOfStaff, Double balance, ArrayList<Object> carList) {
+    DatabaseFactoring dbf = new DatabaseFactoring();
+    public Departament (Integer numberOfStaff, Double balance) {
         this.numberOfStaff=numberOfStaff;
         this.balance=balance;
-        this.vehicleList =carList;
+    }
+
+    public void deposit(Double money) {
+        balance=balance+money;
+    }
+    public void withdraw(Double money) {
+        balance = balance-money;
+    }
+    public Double balance() {
+        return balance;
     }
 }
