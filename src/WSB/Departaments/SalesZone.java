@@ -1,19 +1,28 @@
 package WSB.Departaments;
 
-import java.util.ArrayList;
+import WSB.Database.Database;
 
 public class SalesZone extends Departament implements Actions{
-    public SalesZone(Integer numberOfStaff, Double balance, ArrayList<Object> vehicleList) {
-        super(numberOfStaff, balance, vehicleList);
+    Database salon = new Database();
+
+    public SalesZone(Integer numberOfStaff, Double balance) {
+        super(numberOfStaff, balance);
+    }
+
+
+    @Override
+    public void addVehicle(Integer type, Integer position, Integer numberOnList) {
+        salon.addVehicle(type, position, dbf.getObjectVehicle(type, position, numberOnList));
     }
 
     @Override
-    public String checkCar(Object object) {
-        return null;
+    public void removeVehicle(Integer type, Integer position, Integer numberOnList) {
+        salon.removeVehicle(type,position,numberOnList);
     }
 
     @Override
-    public void destroyCar() {
-
+    public Database showAllVehicles() {
+        return salon;
     }
+
 }
