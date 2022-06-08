@@ -9,4 +9,8 @@ public class PickUp extends Car {
         this.capacity=capacity;
         dbf.addVehicle(1,3,this);
     }
+    @Override
+    public String toString() {
+        return "Model: "+ super.getModel()+", Producent: "+super.getProducer()+", Data produkcji: "+super.getYearOfProduction()+", Rodzaj silnika: "+super.getEngineType()+", Cena: "+super.getPrice()+", Ladowność: "+String.valueOf(capacity);
+    }
 }

@@ -40,4 +40,21 @@ public class Factory extends Departament{
         Trailer temp = new Trailer(model,producer,today,15000.0,numberOfAxes);
         dbf.addVehicle(3,1,temp);
     }
+
+    public void tempInput() {
+        createSUV("Kodiaq", "Skoda", "diesel", 35.0);
+        createSUV("Kamiq", "Skoda", "benzine", 20.0);
+        createSUV("Rav4", "Toyota", "hybrid", 20.0);
+        createSUV("Karoq", "Skoda", "benzine", 20.0);
+        createSUV("X5", "BMW", "diesel", 35.0);
+        createSuperCar("911", "Porshe", "benzine", 350);
+        createSuperCar("Supra", "Toyota", "benzine", 200);
+        createPickUp("Ranger", "Ford", "diesel", 1500.0);
+        createPickUp("Hilux", "Toyota", "diesel", 2000.0);
+        createMotorcycle("R6", "Yamaha", "Scigacz", 1000);
+        createMotorcycle("Varadero", "Honda", "Turystyczny", 1000);
+        createMotorcycle("RS125", "Aprilia", "Scigacz", 125);
+        createTrailer("Cargo", "Przyczepix", 1);
+        createTrailer("SuperCargo", "przyczepix", 2);
+    }
 }

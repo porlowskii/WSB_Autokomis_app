@@ -17,4 +17,19 @@ public abstract class Vehicle {
         this.price = price;
     }
 
+    public String getModel() {
+        return model;
+    }
+
+    public String getProducer() {
+        return producer;
+    }
+
+    public Integer getYearOfProduction() {
+        return yearOfProduction;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
 }

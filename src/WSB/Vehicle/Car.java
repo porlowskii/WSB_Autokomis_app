@@ -14,6 +14,15 @@ public abstract class Car extends Vehicle implements Service{
             case "hybrid": this.fuel = "PB95";
         }
     }
+
+    public String getEngineType() {
+        return engineType;
+    }
+
+    public String getFuel() {
+        return fuel;
+    }
+
     @Override
     public String clean() {
         return "Lśni jak nigdy";

@@ -9,12 +9,11 @@ public class UserInterface {
 
     public void start() {
 
-
         Scanner scan = new Scanner(System.in);
 
         while (true) {
             System.out.println("Podaj cel wizyty [wpisz liczbę] :");
-            System.out.println("1: Kupno pojazdu");
+            System.out.println("1: Lista pojazdów na sprzedaż");
             System.out.println("2: Praca");
             System.out.println("0: Opuść program");
             String input = scan.nextLine();

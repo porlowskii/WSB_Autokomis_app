@@ -10,4 +10,9 @@ public class SuperCar extends Car {
         this.horsePower = horsePower;
         dbf.addVehicle(1,2,this);
     }
+
+    @Override
+    public String toString() {
+        return "Model: "+ super.getModel()+", Producent: "+super.getProducer()+", Data produkcji: "+super.getYearOfProduction()+", Rodzaj silnika: "+super.getEngineType()+", Cena: "+super.getPrice()+", Moc: "+String.valueOf(horsePower);
+    }
 }

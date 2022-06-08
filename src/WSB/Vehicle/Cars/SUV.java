@@ -9,4 +9,8 @@ public class SUV extends Car {
         this.clearance=clearance;
         dbf.addVehicle(1,1,this);
     }
+    @Override
+    public String toString() {
+        return "Model: "+ super.getModel()+", Producent: "+super.getProducer()+", Data produkcji: "+super.getYearOfProduction()+", Rodzaj silnika: "+super.getEngineType()+", Cena: "+super.getPrice()+", Prześwit: "+String.valueOf(clearance);
+    }
 }

@@ -37,7 +37,7 @@ public class Database {
     }
 
     public Object getObjectVehicle (Integer type, Integer position, Integer numberOnList) {
-        return hashMap.get(type).get(position).get(numberOnList).toString();
+        return hashMap.get(type).get(position).get(numberOnList);
     }
 
     public ArrayList getAllVehicles (Integer type, Integer position) {

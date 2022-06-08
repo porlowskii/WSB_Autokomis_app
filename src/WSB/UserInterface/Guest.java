@@ -1,42 +1,45 @@
 package WSB.UserInterface;
 
+import WSB.Database.DatabaseFactoring;
+
 import java.util.Locale;
 import java.util.Scanner;
 
 public class Guest {
     Scanner scan = new Scanner(System.in);
-    public Guest(){}
+    DatabaseFactoring dbf = new DatabaseFactoring();
+
+    public Guest() {
+    }
 
     public void start() {
 
-        while(true) {
-            System.out.println("Jaki rodzaj pojazdu Cię interesuje [wpisz liczbę] :");
+        while (true) {
+            System.out.println("Wybierz rodzaj pojazdu:");
             System.out.println("1: Samochód");
             System.out.println("2: Motocykl");
             System.out.println("3: Przyczepa");
-            System.out.println("0: Powrót do poprzedniego widoku");
+            System.out.println("0: Powrót");
             System.out.println("X: Wyjście z programu");
-            String input = scan.nextLine();
-            if (input.toLowerCase(Locale.ROOT).equals("x")) {
+            String inputSalon = scan.nextLine();
+            if (inputSalon.toLowerCase(Locale.ROOT).equals("x")) {
                 System.exit(0);
             }
-            Integer target;
+            Integer targetSalon;
             try {
-                target = Integer.valueOf(input);
+                targetSalon = Integer.valueOf(inputSalon);
             } catch (Exception e) {
                 System.out.println("Nieprawidłowy format, podaj jedynie liczbę");
                 continue;
             }
-            System.out.println(target);
-            if (target==0) {
+            if (targetSalon == 0) {
                 break;
             }
-            //TODO: podział na rodzaj pojazdu
-            if (target==1) {
-                System.out.println("1: SUV'y");
-                System.out.println("2: SuperCars");
-                System.out.println("3: PickUp'y");
-                System.out.println("0: Powrót do głownego menu");
+            if (targetSalon == 1) {
+                System.out.println("Jaki typ samochodu?");
+                System.out.println("1: SUV");
+                System.out.println("2: SuperCar");
+                System.out.println("3: PickUp");
                 System.out.println("X: Wyjście z programu");
                 String inputCar = scan.nextLine();
                 if (inputCar.toLowerCase(Locale.ROOT).equals("x")) {
@@ -49,26 +52,17 @@ public class Guest {
                     System.out.println("Nieprawidłowy format, podaj jedynie liczbę");
                     continue;
                 }
-                if(targetCar==0) {
-                    break;
-                }
-                if(targetCar==1) {
-                    System.out.println("XXXXXX");
-                    System.exit(0);
+                System.out.println("Lista pojazdów:");
+                for (int i = 0; i < dbf.getAllVehicles(targetSalon, targetCar).size(); i++) {
+                    System.out.println(i + 1 + ": " + dbf.getAllVehicles(targetSalon, targetCar).get(i).toString());
                 }
             }
-            if (target==2) {
-                System.out.println("moto");
-                System.exit(0);
+            if (targetSalon == 2 || targetSalon == 3) {
+                System.out.println("Lista pojazdów:");
+                for (int i = 0; i < dbf.getAllVehicles(targetSalon, 1).size(); i++) {
+                    System.out.println(i + 1 + ": " + dbf.getAllVehicles(targetSalon, 1).get(i).toString());
+                }
             }
-            if (target==3) {
-                System.out.println("przyczepa");
-                System.exit(0);
-            } else {
-                System.out.println("Wybrano błędną liczbę, spróbuj ponownie.");
-            }
-
         }
-
     }
 }
