@@ -8,7 +8,6 @@ public class SuperCar extends Car {
     public SuperCar(String model, String producer, Integer dateOfProduction, String engineType, Double price, Integer horsePower) {
         super(model, producer, dateOfProduction, price, engineType);
         this.horsePower = horsePower;
-        dbf.addVehicle(1,2,this);
     }
 
     @Override

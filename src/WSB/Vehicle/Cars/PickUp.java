@@ -7,7 +7,6 @@ public class PickUp extends Car {
     public PickUp(String model, String producer, Integer dateOfProduction, String engineType, Double price, Double capacity) {
         super(model, producer, dateOfProduction, price, engineType);
         this.capacity=capacity;
-        dbf.addVehicle(1,3,this);
     }
     @Override
     public String toString() {

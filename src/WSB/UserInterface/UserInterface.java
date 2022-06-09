@@ -1,14 +1,16 @@
 package WSB.UserInterface;
 
+import WSB.Departaments.Factory;
+
 import java.util.Scanner;
 
 public class UserInterface {
     public UserInterface() {}
     Employee employee = new Employee();
     Guest guest = new Guest();
-
+    Factory factory = new Factory(0,0.0);
     public void start() {
-
+        factory.tempInput();
         Scanner scan = new Scanner(System.in);
 
         while (true) {
@@ -24,15 +26,15 @@ public class UserInterface {
                 System.out.println("Nieprawidłowy format, podaj jedynie liczbę");
                 continue;
             }
+            if (target == 0) {
+                break;
+            }
             if (target == 1) {
                 guest.start();
-                continue;
             }
             if (target == 2) {
                 employee.start();
-                continue;
             }
-            break;
         }
     }
 }

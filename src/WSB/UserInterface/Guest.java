@@ -15,6 +15,7 @@ public class Guest {
     public void start() {
 
         while (true) {
+            System.out.println("---");
             System.out.println("Wybierz rodzaj pojazdu:");
             System.out.println("1: Samochód");
             System.out.println("2: Motocykl");

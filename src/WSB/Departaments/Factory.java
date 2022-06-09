@@ -5,40 +5,39 @@ import WSB.Vehicle.Cars.SUV;
 import WSB.Vehicle.Cars.SuperCar;
 import WSB.Vehicle.Motorcycle;
 import WSB.Vehicle.Trailer;
-
-import java.time.LocalDateTime;
-
 public class Factory extends Departament{
-    Integer today = Integer.valueOf(LocalDateTime.now().getYear());
-
     public Factory(Integer numberOfStaff, Double balance) {
         super(numberOfStaff, balance);
     }
 
     public void createSUV (String model, String producer, String engineType , Double clearance) {
-        SUV temp = new SUV(model, producer, today, engineType, 100000.0, clearance);
+        SUV temp = new SUV(model, producer, today, engineType, SUVprice, clearance);
         dbf.addVehicle(1,1,temp);
-
+        withdraw(SUVprice);
     }
 
     public void createSuperCar (String model, String producer, String engineType, Integer horsePower) {
-        SuperCar temp = new SuperCar(model, producer,today,engineType,350000.0,horsePower);
+        SuperCar temp = new SuperCar(model, producer,today,engineType,superCarPrice,horsePower);
         dbf.addVehicle(1,2,temp);
+        withdraw(superCarPrice);
     }
 
     public void createPickUp (String model, String producer, String engineType, Double capacity) {
-        PickUp temp = new PickUp(model,producer,today,engineType,150000.0,capacity);
+        PickUp temp = new PickUp(model,producer,today,engineType,pickUpPrice,capacity);
         dbf.addVehicle(1,3,temp);
+        withdraw(pickUpPrice);
     }
 
     public void createMotorcycle (String model, String producer , String type, Integer engineCap) {
-        Motorcycle temp = new Motorcycle(model,producer,today,70000.0,type,engineCap);
+        Motorcycle temp = new Motorcycle(model,producer,today,motorcyclePrice,type,engineCap);
         dbf.addVehicle(2,1,temp);
+        withdraw(motorcyclePrice);
     }
 
     public void createTrailer (String model, String producer , Integer numberOfAxes) {
-        Trailer temp = new Trailer(model,producer,today,15000.0,numberOfAxes);
+        Trailer temp = new Trailer(model,producer,today,trailerPrice,numberOfAxes);
         dbf.addVehicle(3,1,temp);
+        withdraw(trailerPrice);
     }
 
     public void tempInput() {

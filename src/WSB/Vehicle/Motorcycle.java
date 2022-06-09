@@ -8,7 +8,6 @@ public class Motorcycle extends Vehicle implements Service{
         super(model, producer, dateOfProduction, price);
         this.type = type;
         this.engineCap = engineCap;
-        dbf.addVehicle(2,1,this);
     }
 
     @Override
