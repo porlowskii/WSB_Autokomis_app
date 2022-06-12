@@ -12,24 +12,32 @@ public class Factory extends Departament{
 
     public void createSUV (String model, String producer, String engineType , Double clearance) {
         SUV temp = new SUV(model, producer, today, engineType, SUVprice, clearance);
+        System.out.println(temp.clean());
+        System.out.println(temp.refuel());
         dbf.addVehicle(1,1,temp);
         withdraw(SUVprice);
     }
 
     public void createSuperCar (String model, String producer, String engineType, Integer horsePower) {
         SuperCar temp = new SuperCar(model, producer,today,engineType,superCarPrice,horsePower);
+        System.out.println(temp.clean());
+        System.out.println(temp.refuel());
         dbf.addVehicle(1,2,temp);
         withdraw(superCarPrice);
     }
 
     public void createPickUp (String model, String producer, String engineType, Double capacity) {
         PickUp temp = new PickUp(model,producer,today,engineType,pickUpPrice,capacity);
+        System.out.println(temp.clean());
+        System.out.println(temp.refuel());
         dbf.addVehicle(1,3,temp);
         withdraw(pickUpPrice);
     }
 
     public void createMotorcycle (String model, String producer , String type, Integer engineCap) {
         Motorcycle temp = new Motorcycle(model,producer,today,motorcyclePrice,type,engineCap);
+        System.out.println(temp.clean());
+        System.out.println(temp.refuel());
         dbf.addVehicle(2,1,temp);
         withdraw(motorcyclePrice);
     }

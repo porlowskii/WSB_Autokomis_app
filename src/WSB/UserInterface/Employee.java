@@ -109,23 +109,6 @@ public class Employee {
                         System.out.println("Nieprawidłowy format, podaj jedynie liczbę");
                         break;
                     }
-
-                    System.out.println("Wybierz uslugi dodatkowe");
-                    System.out.println("Jeżeli kilka - wpisz je po przecinku [,]");
-                    System.out.println("1: Mycie");
-                    System.out.println("2: Tankowanie");
-                    System.out.println("3: Brak usług dodatkowych");
-                    String usluga = scan.nextLine();
-                    Integer uslugaNo;
-                    try {
-                        uslugaNo = Integer.valueOf(usluga);
-                    } catch (Exception e) {
-                        System.out.println("Nieprawidłowy format, podaj jedynie liczbę");
-                        continue;
-                    }
-                    //TODO:dokończyć usługi
-
-
                     Double gotowka = 0.0;
                     Double zarobki = 0.0;
                     System.out.println("Ile posiadasz gotówki?");
